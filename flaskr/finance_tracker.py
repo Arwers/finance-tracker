@@ -5,9 +5,13 @@ from flask import Flask, render_template
 app = Flask(__name__, template_folder="templates")
 
 
+# list of dictionaries of expenses
+expenses = []
+
+
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", expenses = expenses)
 
 
 if __name__ == "__main__":
