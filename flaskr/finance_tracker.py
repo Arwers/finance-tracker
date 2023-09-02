@@ -6,7 +6,11 @@ app = Flask(__name__, template_folder="templates")
 
 
 # list of dictionaries of expenses
-expenses = []
+expenses = [
+    {"name": "wydatki"},
+    {"name": "wydatki2"},
+    {"name": "wydatki3"},
+    ]
 
 
 @app.route("/")
