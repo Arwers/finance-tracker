@@ -10,5 +10,11 @@
   </head>
   <body>
     <h1>Finance tracker</h1>
+    <h2>Expenses:</h2>
+    <ul>
+      {% for expense in expenses%}
+        <li>{{expense["name"]}}</li>
+      {% endfor %}
+    </ul>
   </body>
 </html>
