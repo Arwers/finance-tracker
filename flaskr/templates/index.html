@@ -13,8 +13,16 @@
     <h2>Expenses:</h2>
     <ul>
       {% for expense in expenses%}
-        <li>{{expense["name"]}}</li>
+        <li>name:{{ expense["name"] }} expense:{{ expense["cost"] }} date:{{ expense["date"] }}</li>
       {% endfor %}
     </ul>
+
+    <form action="{{ url_for('add') }}" method="post">
+      <input type="text" name="name">
+      <input type="number" name="cost">
+      <input type="date" name="date">
+      <button type="submit">Add</button>
+    </form>
+    
   </body>
 </html>

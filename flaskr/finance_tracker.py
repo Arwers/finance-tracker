@@ -19,9 +19,9 @@ def index():
 
 @app.route("/add", methods=["POST"])
 def add():
-    name = request.form("name")
-    cost = request.form("cost")
-    date = request.form("date")
+    name = request.form["name"]
+    cost = request.form["cost"]
+    date = request.form["date"]
     expenses.append({"name" : name, "cost": cost, "date": date})
     return redirect(url_for("index"))
 
