@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 
 
 # Check in future, __name__ param can be buggy
@@ -17,6 +17,13 @@ expenses = [
 def index():
     return render_template("index.html", expenses=expenses)
 
+@app.route("/add", methods=["POST"])
+def add():
+    name = request.form("name")
+    cost = request.form("cost")
+    date = request.form("date")
+    expenses.append({"name" : name, "cost": cost, "date": date})
+    return redirect(url_for("index"))
 
 if __name__ == "__main__":
     app.run(debug=True)
