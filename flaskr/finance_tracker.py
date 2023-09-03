@@ -12,10 +12,15 @@ expenses = [
     {"name": "expense3", "cost": 50, "date": "14.11.203"},
 ]
 
+# total cost of all expenses
+total_cost = 0
+for item in expenses:
+    total_cost += item["cost"]
+
 
 @app.route("/")
 def index():
-    return render_template("index.html", expenses=expenses)
+    return render_template("index.html", expenses=expenses, total_cost=total_cost)
 
 
 @app.route("/add", methods=["POST"])
