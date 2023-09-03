@@ -25,5 +25,11 @@ def add():
     expenses.append({"name" : name, "cost": cost, "date": date})
     return redirect(url_for("index"))
 
+@app.route("/delete/<int:index>")
+def delete(index):
+    del expenses[index]
+    return redirect(url_for("index"))
+
+
 if __name__ == "__main__":
     app.run(debug=True)

@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Finance tracker</title>
-    <link rel="stylesheet" href="/flaskr/static/style.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
-  </head>
-  <body>
-    <h1>Finance tracker</h1>
-    <h2>Expenses:</h2>
-    <ul>
-      {% for expense in expenses%}
-        <li>name:{{ expense["name"] }} expense:{{ expense["cost"] }} date:{{ expense["date"] }}</li>
-      {% endfor %}
-    </ul>
 
-    <form action="{{ url_for('add') }}" method="post">
-      <input type="text" name="name">
-      <input type="number" name="cost">
-      <input type="date" name="date">
-      <button type="submit">Add</button>
-    </form>
-    
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Finance tracker</title>
+  <link rel="stylesheet" href="/flaskr/static/style.css" />
+  <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+  <h1>Finance tracker</h1>
+  <h2>Expenses:</h2>
+  <ul>
+    {% for expense in expenses%}
+    <li>
+      name:{{ expense["name"] }} expense:{{ expense["cost"] }} date:{{
+      expense["date"] }}
+      <a href="{{url_for('delete', index = loop.index0)}}">Delete</a>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <form action="{{ url_for('add') }}" method="post">
+    <input type="text" name="name" />
+    <input type="number" name="cost" />
+    <input type="date" name="date" />
+    <button type="submit">Add</button>
+  </form>
+</body>
+
 </html>
