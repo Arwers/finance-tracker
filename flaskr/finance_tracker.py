@@ -11,11 +11,14 @@ expenses = [
     {"name": "expense2", "cost": 150, "date": "02.11.2020"},
     {"name": "expense3", "cost": 50, "date": "14.11.203"},
 ]
-# total cost of all expenses
+
 total_cost = 0
 for item in expenses:
     total_cost += item["cost"]
 
+def update(new_cost):
+    global total_cost
+    total_cost += new_cost
 
 @app.route("/")
 def index():
@@ -27,22 +30,20 @@ def add():
     name = request.form["name"]
     cost = int(request.form["cost"])
     date = request.form["date"]
+
     expenses.append({"name": name, "cost": cost, "date": date})
+    update(cost)
+    
     return redirect(url_for("index"))
 
 
 @app.route("/delete/<int:index>")
 def delete(index):
+    delated_cost = -expenses[index]["cost"]
+    update(delated_cost)
+    
     del expenses[index]
     return redirect(url_for("index"))
-
-
-@app.get("/update")
-def update():
-    global gen_total  # get the global iterator
-
-    # return the next value in iterator
-    return str(next(gen_total))
 
 
 if __name__ == "__main__":
