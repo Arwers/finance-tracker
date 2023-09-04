@@ -16,7 +16,7 @@ total_cost = 0
 for item in expenses:
     total_cost += item["cost"]
 
-def update(new_cost):
+def total_cost_update(new_cost):
     global total_cost
     total_cost += new_cost
 
@@ -32,7 +32,7 @@ def add():
     date = request.form["date"]
 
     expenses.append({"name": name, "cost": cost, "date": date})
-    update(cost)
+    total_cost_update(cost)
     
     return redirect(url_for("index"))
 
@@ -40,8 +40,8 @@ def add():
 @app.route("/delete/<int:index>")
 def delete(index):
     delated_cost = -expenses[index]["cost"]
-    update(delated_cost)
-    
+    total_cost_update(delated_cost)
+
     del expenses[index]
     return redirect(url_for("index"))
 
