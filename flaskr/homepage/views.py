@@ -3,9 +3,16 @@ from .utils import *
 
 
 homepage = Blueprint(
-    "profile", __name__, template_folder="templates", static_folder="static"
+    "homepage", __name__, template_folder="templates", static_folder="static"
 )
 
+expenses = [
+    {"name": "expense1", "cost": 300, "date": "11.11.2023"},
+    {"name": "expense2", "cost": 150, "date": "02.11.2020"},
+    {"name": "expense3", "cost": 50, "date": "14.11.203"},
+]
+
+total_cost = total_cost_count(expenses)
 
 @homepage.route("/")
 def index():
@@ -19,15 +26,17 @@ def add():
     date = request.form["date"]
 
     expenses.append({"name": name, "cost": cost, "date": date})
-    total_cost_update(cost)
+    global total_cost
+    total_cost += cost
 
-    return redirect(url_for("index"))
+    return redirect(url_for("homepage.index"))
 
 
 @homepage.route("/delete/<int:index>")
 def delete(index):
-    delated_cost = -expenses[index]["cost"]
-    total_cost_update(delated_cost)
+    cost = expenses[index]["cost"]
+    global total_cost
+    total_cost -= cost
 
     del expenses[index]
-    return redirect(url_for("index"))
+    return redirect(url_for("homepage.index"))
