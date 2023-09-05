@@ -1,9 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
-
-
-# Check in future, __name__ param can be buggy
-app = Flask(__name__, template_folder="templates")
-
+from flask import render_template, request, redirect, url_for
 
 # list of dictionaries of expenses
 expenses = [
