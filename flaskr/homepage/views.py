@@ -33,7 +33,12 @@ def add():
     return redirect(url_for("homepage.index"))
 
 
-
+@homepage.route("/add_limit", methods=["POST"])
+def add_limit():
+    global limit
+    limit = request.form["limit"]
+    
+    return redirect(url_for("homepage.index"))
 
 
 @homepage.route("/delete/<int:index>")
