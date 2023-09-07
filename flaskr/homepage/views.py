@@ -13,6 +13,7 @@ expenses = [
 ]
 
 total_cost = total_cost_count(expenses)
+limit = 2000
 
 @homepage.route("/")
 def index():
@@ -30,6 +31,9 @@ def add():
     total_cost += cost
 
     return redirect(url_for("homepage.index"))
+
+
+
 
 
 @homepage.route("/delete/<int:index>")
