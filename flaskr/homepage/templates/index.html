@@ -30,6 +30,11 @@
       <button type="submit">Add</button>
     </form>
 
+    <form action="{{ url_for('homepage.add_limit') }}" method="post">
+      <input type="number" name="limit" />
+      <button type="submit">Set limit</button>
+    </form>
+
     <h2>Sum of expenses: {{total_cost}}</h2>
     
   </body>
