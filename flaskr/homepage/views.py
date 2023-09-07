@@ -17,7 +17,7 @@ limit = 2000
 
 @homepage.route("/")
 def index():
-    return render_template("index.html", expenses=expenses, total_cost=total_cost)
+    return render_template("index.html", expenses=expenses, total_cost=total_cost, limit=limit)
 
 
 @homepage.route("/add", methods=["POST"])
