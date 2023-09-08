@@ -21,18 +21,18 @@ expenses = [
     {"name": "expense3", "cost": 50, "date": "14.11.203", "category": "food"},
 ]
 
-total_cost = total_cost_count(expenses)
 all_costs = {key: 0 for key in ["total"] + categories}
-#update_all_costs(all_costs)
+all_costs = set_all_costs(all_costs, expenses)
+
 limit = 2000
 
-
+print(all_costs)
 @homepage.route("/")
 def index():
     return render_template(
         "index.html",
         expenses=expenses,
-        total_cost=total_cost,
+        all_costs=all_costs,
         limit=limit,
         categories=categories,
     )
@@ -46,8 +46,8 @@ def add():
     category = request.form["category"]
 
     expenses.append({"name": name, "cost": cost, "date": date, "category": category})
-    global total_cost
-    total_cost += cost
+    all_costs[category] += cost
+    all_costs["total"] += cost
 
     return redirect(url_for("homepage.index"))
 
@@ -62,9 +62,9 @@ def add_limit():
 
 @homepage.route("/delete/<int:index>")
 def delete(index):
-    cost = expenses[index]["cost"]
-    global total_cost
-    total_cost -= cost
+    expense = expenses[index]
+    all_costs[expense["category"]] -= expense["cost"]
+    all_costs["total"] -= expense["cost"]
 
     del expenses[index]
     return redirect(url_for("homepage.index"))
