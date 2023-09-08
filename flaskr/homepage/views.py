@@ -28,8 +28,8 @@ def add():
     name = request.form["name"]
     cost = int(request.form["cost"])
     date = request.form["date"]
-
-    expenses.append({"name": name, "cost": cost, "date": date})
+    category = request.form["category"]
+    expenses.append({"name": name, "cost": cost, "date": date, "category": category})
     global total_cost
     total_cost += cost
 
