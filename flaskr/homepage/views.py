@@ -6,6 +6,15 @@ homepage = Blueprint(
     "homepage", __name__, template_folder="templates", static_folder="static"
 )
 
+categories = [
+    "food",
+    "car",
+    "house",
+    "health",
+    "taxes",
+    "other",
+]
+
 expenses = [
     {"name": "expense1", "cost": 300, "date": "11.11.2023", "category": "food"},
     {"name": "expense2", "cost": 150, "date": "02.11.2020", "category": "car"},
