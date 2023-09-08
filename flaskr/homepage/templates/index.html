@@ -12,6 +12,12 @@
   <body>
     <h1>Finance tracker</h1>
     <h2>Limit: {{limit}}</h2>
+    
+    <form action="{{ url_for('homepage.add_limit') }}" method="post">
+      <input type="number" name="limit" />
+      <button type="submit">Set limit</button>
+    </form>
+
     <h2>Expenses:</h2>
     <ul>
       {% for expense in expenses%}
@@ -28,11 +34,6 @@
       <input type="number" name="cost" />
       <input type="date" name="date" />
       <button type="submit">Add</button>
-    </form>
-
-    <form action="{{ url_for('homepage.add_limit') }}" method="post">
-      <input type="number" name="limit" />
-      <button type="submit">Set limit</button>
     </form>
 
     <h2>Sum of expenses: {{total_cost}}</h2>
