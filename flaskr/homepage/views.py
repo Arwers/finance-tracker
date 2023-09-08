@@ -22,7 +22,8 @@ expenses = [
 ]
 
 total_cost = total_cost_count(expenses)
-category_cost = {key: 0 for key in categories}
+category_cost = {key: 0 for key in ["total"] + categories}
+print(category_cost)
 limit = 2000
 
 
