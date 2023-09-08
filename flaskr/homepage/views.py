@@ -13,10 +13,14 @@ expenses = [
 ]
 
 total_cost = total_cost_count(expenses)
+limit = 2000
+
 
 @homepage.route("/")
 def index():
-    return render_template("index.html", expenses=expenses, total_cost=total_cost)
+    return render_template(
+        "index.html", expenses=expenses, total_cost=total_cost, limit=limit
+    )
 
 
 @homepage.route("/add", methods=["POST"])
@@ -28,6 +32,14 @@ def add():
     expenses.append({"name": name, "cost": cost, "date": date})
     global total_cost
     total_cost += cost
+
+    return redirect(url_for("homepage.index"))
+
+
+@homepage.route("/add_limit", methods=["POST"])
+def add_limit():
+    global limit
+    limit = request.form["limit"]
 
     return redirect(url_for("homepage.index"))
 
