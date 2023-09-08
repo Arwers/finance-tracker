@@ -22,7 +22,10 @@
     <ul>
       {% for expense in expenses %}
       <li>
-        name:{{ expense["name"] }} expense:{{ expense["cost"] }} date:{{ expense["date"] }}
+        name: {{ expense["name"] }}
+        expense: {{ expense["cost"] }}
+        date: {{ expense["date"] }}
+        category: {{ expense["category"] }}
         <a href="{{url_for('homepage.delete', index = loop.index0)}}">Delete</a>
       </li>
       {% endfor %}
@@ -32,6 +35,11 @@
       <input type="text" name="name" />
       <input type="number" name="cost" />
       <input type="date" name="date" />
+      <select name = "category">
+        <option value = "food">food</option>
+        <option value = "car">car</option>
+        <option value = "house">house</option>
+      </select>
       <button type="submit">Add</button>
     </form>
 
