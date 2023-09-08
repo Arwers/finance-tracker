@@ -22,8 +22,8 @@ expenses = [
 ]
 
 total_cost = total_cost_count(expenses)
-category_cost = {key: 0 for key in ["total"] + categories}
-print(category_cost)
+all_costs = {key: 0 for key in ["total"] + categories}
+#update_all_costs(all_costs)
 limit = 2000
 
 
