@@ -36,9 +36,9 @@
       <input type="number" name="cost" />
       <input type="date" name="date" />
       <select name = "category">
-        <option value = "food">food</option>
-        <option value = "car">car</option>
-        <option value = "house">house</option>
+        {% for category in categories %}
+          <option value ="{{ category }}">{{ category }}</option>        
+        {% endfor %}
       </select>
       <button type="submit">Add</button>
     </form>
