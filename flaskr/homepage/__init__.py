@@ -8,4 +8,11 @@ def utility_processor():
             return -exceed
         else:
             return 0
-    return dict(money_exceed=money_exceed)
+    
+    def money_left(limit, total_cost):
+        left = int(limit) - int(total_cost)
+        if left > 0:
+            return left
+        else:
+            return 0
+    return dict(money_exceed = money_exceed, money_left = money_left)
