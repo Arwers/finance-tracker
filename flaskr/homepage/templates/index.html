@@ -12,7 +12,7 @@
   <body>
     <h1>Finance tracker</h1>
     <h2>Limit: {{limit}}</h2>
-    
+
     <form action="{{ url_for('homepage.add_limit') }}" method="post">
       <input type="number" name="limit" />
       <button type="submit">Set limit</button>
@@ -20,10 +20,9 @@
 
     <h2>Expenses:</h2>
     <ul>
-      {% for expense in expenses%}
+      {% for expense in expenses %}
       <li>
-        name:{{ expense["name"] }} expense:{{ expense["cost"] }} date:{{
-        expense["date"] }}
+        name:{{ expense["name"] }} expense:{{ expense["cost"] }} date:{{ expense["date"] }}
         <a href="{{url_for('homepage.delete', index = loop.index0)}}">Delete</a>
       </li>
       {% endfor %}
