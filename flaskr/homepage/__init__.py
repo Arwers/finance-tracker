@@ -1,13 +1,10 @@
-from flaskr.homepage.utils import count_money_left
-from flaskr.__init__ import app
+from flaskr.homepage.views import homepage
 
-
-def count_money_left(limit, total):
-    temp = limit - total
-    if temp < 0:
-        return temp
-    else:
-        return 0
-
-# !
-app.jinja_env.globals.update(count_money_left = count_money_left)
+@homepage.context_processor
+def utility_processor():
+    def money_exceed(limit, total_cost):
+        temp = limit - total_cost
+        if temp < 0:
+            return temp
+        else:
+            return 0
