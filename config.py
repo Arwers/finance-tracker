@@ -1,2 +1,2 @@
 DEBUG = True
-SQLALCHEMY_DATABASE_URI = "sqlite:////flaskr/db.db"
+SQLALCHEMY_DATABASE_URI = "sqlite:///flaskr/db.db"
