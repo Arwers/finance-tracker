@@ -26,7 +26,6 @@ all_costs = set_all_costs(all_costs, expenses)
 
 limit = 2000
 
-print(all_costs)
 @homepage.route("/")
 def index():
     return render_template(
