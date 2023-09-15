@@ -2,6 +2,8 @@ from . import db
 
 
 class Expenses(db.Model):
+    __tablename__ = "Expenses"
+
     # keys
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     user_id = db.Column(db.Integer, foreign_key=True)
