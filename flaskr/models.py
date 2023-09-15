@@ -6,7 +6,7 @@ class Expenses(db.Model):
 
     # keys
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    user_id = db.Column(db.Integer, foreign_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("Users.id"))
     
     # values
     name = db.Column(db.String(64))
