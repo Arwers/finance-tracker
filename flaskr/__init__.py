@@ -11,4 +11,4 @@ app.register_blueprint(homepage)
 
 # database
 db = SQLAlchemy(app)
-from models import Expenses
+from .models import Expenses
