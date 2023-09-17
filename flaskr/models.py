@@ -16,6 +16,12 @@ class Expenses(db.Model):
     cost = db.Column(db.Numeric(10, 2))
     date = db.Column(db.Date())
     category = db.Column(db.String(32))
+    
+    def __init__(self, name, cost, date, category):
+        self.name = name
+        self.cost = cost
+        self.date = date
+        self.category = category
 
 
 class Users(db.Model):
@@ -27,3 +33,8 @@ class Users(db.Model):
     # values
     username = db.Column(db.String(32))
     password = db.Column(db.String(32))
+
+    def __init__(self, username, password):
+        self.username = username
+        self.password = password
+
