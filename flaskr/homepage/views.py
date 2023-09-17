@@ -19,6 +19,7 @@ expenses = {}
 all_costs = 444
 limit = 2000
 
+
 @homepage.route("/")
 def index():
     return render_template(
@@ -45,14 +46,6 @@ def add():
     return redirect(url_for("homepage.index"))
 
 
-@homepage.route("/add_limit", methods=["POST"])
-def add_limit():
-    global limit
-    limit = request.form["limit"]
-
-    return redirect(url_for("homepage.index"))
-
-
 @homepage.route("/delete/<int:index>")
 def delete(id):
     try:
@@ -62,3 +55,12 @@ def delete(id):
         pass
     
     return redirect(url_for("homepage.index"))
+
+
+@homepage.route("/add_limit", methods=["POST"])
+def add_limit():
+    global limit
+    limit = request.form["limit"]
+
+    return redirect(url_for("homepage.index"))
+
