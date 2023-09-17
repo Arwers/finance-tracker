@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from .utils import *
 from ..models import db, Expenses, add_record, delete_record
-
+from datetime import date
 homepage = Blueprint(
     "homepage", __name__, template_folder="templates", static_folder="static"
 )
@@ -16,7 +16,7 @@ categories = [
 ]
 
 expenses = {}
-all_costs = 444
+all_costs = {}
 limit = 2000
 
 
@@ -24,7 +24,7 @@ limit = 2000
 def index():
     return render_template(
         "index.html",
-        expenses=expenses,
+        expenses=Expenses.query.all(),
         all_costs=all_costs,
         limit=limit,
         categories=categories,
@@ -36,24 +36,21 @@ def add():
     # gather data
     name = request.form["name"]
     cost = int(request.form["cost"])
-    date = request.form["date"]
+    day = date.fromisoformat(request.form["date"])
     category = request.form["category"]
-
+    
     # add record to db
-    record = Expenses(name, cost, date, category)
+    record = Expenses(name, cost, day, category)
     add_record(record)
 
     return redirect(url_for("homepage.index"))
 
 
-@homepage.route("/delete/<int:index>")
+@homepage.route("/delete/<int:id>")
 def delete(id):
-    try:
-        record = db.get_or_404(Expenses, id)
-        delete_record(record)
-    except 404:
-        pass
-    
+    record = db.get_or_404(Expenses, id)
+    delete_record(record)
+
     return redirect(url_for("homepage.index"))
 
 
