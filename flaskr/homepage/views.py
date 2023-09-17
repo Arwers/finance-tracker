@@ -2,6 +2,9 @@ from flask import Blueprint, render_template, request, redirect, url_for
 from .utils import *
 from ..models import db, Expenses, add_record, delete_record
 from datetime import date
+from dataclasses import dataclass
+
+
 homepage = Blueprint(
     "homepage", __name__, template_folder="templates", static_folder="static"
 )
@@ -13,10 +16,11 @@ categories = [
     "health",
     "taxes",
     "other",
-]
+    ]
 
-expenses = {}
-all_costs = {}
+expenses = Expenses.query.all()
+all_costs = {key: 0 for key in ["total"] + categories}
+all_costs = set_all_costs(all_costs, expenses)
 limit = 2000
 
 
@@ -24,7 +28,7 @@ limit = 2000
 def index():
     return render_template(
         "index.html",
-        expenses=Expenses.query.all(),
+        expenses=expenses,
         all_costs=all_costs,
         limit=limit,
         categories=categories,
