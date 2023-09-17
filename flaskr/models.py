@@ -13,7 +13,7 @@ class Expenses(db.Model):
     
     # values
     name = db.Column(db.String(64))
-    cost = db.Column(db.Numeric(10, 2))
+    cost = db.Column(db.Integer)
     date = db.Column(db.Date())
     category = db.Column(db.String(32))
     
