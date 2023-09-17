@@ -1,15 +1,17 @@
 from flask import Flask
-from .homepage.views import homepage
-from flask_sqlalchemy import SQLAlchemy
 
-# app
-app = Flask(__name__, instance_relative_config=True)
-app.config.from_object('config')
-app.config.from_pyfile('config.py')
 
-#blueprints
-app.register_blueprint(homepage)
+def create_app(config_filename):
+    app = Flask(__name__, instance_relative_config=True)
+    app.config.from_object("config")
+    app.config.from_pyfile(config_filename)
 
-# database
-db = SQLAlchemy(app)
-from .models import Expenses, Users
+    # database
+    from .models import db
+    db.init_app(app)
+
+    # blueprints
+    from .homepage.views import homepage
+    app.register_blueprint(homepage)
+    
+    return app
