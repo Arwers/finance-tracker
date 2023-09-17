@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from .utils import *
-from ..models import db
+from ..models import db, Expenses, add_record, delete_record
 
 homepage = Blueprint(
     "homepage", __name__, template_folder="templates", static_folder="static"
@@ -15,15 +15,8 @@ categories = [
     "other",
 ]
 
-expenses = [
-    {"name": "expense1", "cost": 300, "date": "11.11.2023", "category": "food"},
-    {"name": "expense2", "cost": 150, "date": "02.11.2020", "category": "car"},
-    {"name": "expense3", "cost": 50, "date": "14.11.203", "category": "food"},
-]
-
-all_costs = {key: 0 for key in ["total"] + categories}
-all_costs = set_all_costs(all_costs, expenses)
-
+expenses = {}
+all_costs = 444
 limit = 2000
 
 @homepage.route("/")
@@ -39,14 +32,15 @@ def index():
 
 @homepage.route("/add", methods=["POST"])
 def add():
+    # gather data
     name = request.form["name"]
     cost = int(request.form["cost"])
     date = request.form["date"]
     category = request.form["category"]
 
-    expenses.append({"name": name, "cost": cost, "date": date, "category": category})
-    all_costs[category] += cost
-    all_costs["total"] += cost
+    # add record to db
+    record = Expenses(name, cost, date, category)
+    add_record(record)
 
     return redirect(url_for("homepage.index"))
 
@@ -60,10 +54,11 @@ def add_limit():
 
 
 @homepage.route("/delete/<int:index>")
-def delete(index):
-    expense = expenses[index]
-    all_costs[expense["category"]] -= expense["cost"]
-    all_costs["total"] -= expense["cost"]
-
-    del expenses[index]
+def delete(id):
+    try:
+        record = db.get_or_404(Expenses, id)
+        delete_record(record)
+    except 404:
+        pass
+    
     return redirect(url_for("homepage.index"))
