@@ -39,13 +39,11 @@ class Users(db.Model):
         self.password = password
 
 
-def add_record():
-    ...
+def add_record(record):
+    db.session.add(record)
+    db.session.commit()
 
 
-def delete_record():
-    ...
-
-
-def update_record():
-    ...
+def delete_record(record):
+        db.session.delete(record)
+        db.session.commit()
