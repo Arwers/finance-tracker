@@ -16,7 +16,7 @@ categories = [
     "health",
     "taxes",
     "other",
-    ]
+]
 
 temp_expenses = Expenses.query.all()
 all_costs = {key: 0 for key in ["total"] + categories}
@@ -42,7 +42,7 @@ def add():
     cost = int(request.form["cost"])
     day = date.fromisoformat(request.form["date"])
     category = request.form["category"]
-    
+
     # add record to db
     record = Expenses(name, cost, day, category)
     add_record(record)
@@ -63,7 +63,7 @@ def delete(id):
     all_costs[record.category] -= record.cost
 
     delete_record(record)
-        
+
     return redirect(url_for("homepage.index"))
 
 
@@ -71,6 +71,5 @@ def delete(id):
 def add_limit():
     global limit
     limit = request.form["limit"]
-    
-    return redirect(url_for("homepage.index"))
 
+    return redirect(url_for("homepage.index"))
