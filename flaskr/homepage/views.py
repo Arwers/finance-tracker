@@ -18,9 +18,9 @@ categories = [
     "other",
     ]
 
-expenses = Expenses.query.all()
+temp_expenses = Expenses.query.all()
 all_costs = {key: 0 for key in ["total"] + categories}
-all_costs = set_all_costs(all_costs, expenses)
+all_costs = set_all_costs(all_costs, temp_expenses)
 limit = 2000
 
 
@@ -28,7 +28,7 @@ limit = 2000
 def index():
     return render_template(
         "index.html",
-        expenses=expenses,
+        expenses=Expenses.query.all(),
         all_costs=all_costs,
         limit=limit,
         categories=categories,
@@ -47,14 +47,23 @@ def add():
     record = Expenses(name, cost, day, category)
     add_record(record)
 
+    # update all_costs
+    all_costs["total"] += cost
+    all_costs[category] += cost
+
     return redirect(url_for("homepage.index"))
 
 
 @homepage.route("/delete/<int:id>")
 def delete(id):
     record = db.get_or_404(Expenses, id)
-    delete_record(record)
 
+    # update all_costs
+    all_costs["total"] -= record.cost
+    all_costs[record.category] -= record.cost
+
+    delete_record(record)
+        
     return redirect(url_for("homepage.index"))
 
 
@@ -62,6 +71,6 @@ def delete(id):
 def add_limit():
     global limit
     limit = request.form["limit"]
-
+    
     return redirect(url_for("homepage.index"))
 
