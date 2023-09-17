@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from .utils import *
-
+from ..models import db
 
 homepage = Blueprint(
     "homepage", __name__, template_folder="templates", static_folder="static"
