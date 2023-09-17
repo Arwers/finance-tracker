@@ -10,12 +10,18 @@ class Expenses(db.Model):
     # keys
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     user_id = db.Column(db.Integer, db.ForeignKey("Users.id"))
-    
+
     # values
     name = db.Column(db.String(64))
-    cost = db.Column(db.Numeric(10, 2))
+    cost = db.Column(db.Integer)
     date = db.Column(db.Date())
     category = db.Column(db.String(32))
+
+    def __init__(self, name, cost, date, category):
+        self.name = name
+        self.cost = cost
+        self.date = date
+        self.category = category
 
 
 class Users(db.Model):
@@ -27,3 +33,17 @@ class Users(db.Model):
     # values
     username = db.Column(db.String(32))
     password = db.Column(db.String(32))
+
+    def __init__(self, username, password):
+        self.username = username
+        self.password = password
+
+
+def add_record(record):
+    db.session.add(record)
+    db.session.commit()
+
+
+def delete_record(record):
+    db.session.delete(record)
+    db.session.commit()

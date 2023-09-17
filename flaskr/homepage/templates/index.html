@@ -24,7 +24,7 @@
       <li>
         name: {{ expense["name"] }} expense: {{ expense["cost"] }} date: {{
         expense["date"] }} category: {{ expense["category"] }}
-        <a href="{{url_for('homepage.delete', index = loop.index0)}}">Delete</a>
+        <a href="{{url_for('homepage.delete', id = expense['id'])}}">Delete</a>
       </li>
       {% endfor %}
     </ul>
