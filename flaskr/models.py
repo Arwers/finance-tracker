@@ -38,3 +38,14 @@ class Users(db.Model):
         self.username = username
         self.password = password
 
+
+def add_record():
+    ...
+
+
+def delete_record():
+    ...
+
+
+def update_record():
+    ...
