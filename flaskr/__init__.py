@@ -8,13 +8,11 @@ def create_app(config_filename="config.py"):
 
     # database
     from .models import db
-
     db.init_app(app)
     app.app_context().push()
 
     # blueprints
     from .homepage.views import homepage
-
     app.register_blueprint(homepage)
 
     return app
