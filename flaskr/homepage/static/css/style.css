@@ -1,5 +1,5 @@
 html {
-    background-color: #451952;
+    background: #451952;
     color: #ffffff;
     font-family: "Lucida Console", monospace;
 }
@@ -7,4 +7,15 @@ html {
 .logo img {
     width: 200px;
     height: 150px;
+}
+
+.side-nav {
+    width: 250 px;
+    height: 100%;
+    background: #662549;
+    position: fixed; /*zapytać fudali */
+    top: 0;
+    left: 0;
+    padding: 20px 30px;
+
 }
