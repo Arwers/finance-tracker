@@ -7,18 +7,18 @@ html {
 .side-nav {
     width: 250px;
     height: 100%;
-    background: #662549;
+    background: #3f174b;
     position: fixed; /*zapytać fudali */
     top: 0;
     left: 0;
-    padding: 20px 30px;
+    padding: 25px;
 
 }
 
 .logo {
     display: block;
-    margin-left: 20px;
-    margin-right: 30px;
+    margin-left: 25px;
+    margin-right: 25px;
     width: 50%;
 }
 
