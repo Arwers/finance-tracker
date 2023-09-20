@@ -1,8 +1,12 @@
-from flask import Blueprint, render_template, request, redirect, url_for
-from .utils import *
-from ..models import db, Expenses, add_record, delete_record
+# Standard library imports
 from datetime import date
-from dataclasses import dataclass
+
+# Third-party imports
+from flask import Blueprint, render_template, request, redirect, url_for
+
+# Local file imports
+from ..models import db, Expenses, add_record, delete_record
+from .utils import *
 
 
 homepage = Blueprint(
