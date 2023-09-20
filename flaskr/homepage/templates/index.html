@@ -3,52 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge" /> -->
     <title>Finance tracker</title>
     <link rel="stylesheet" href=".static/style.css" />
-    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <!-- <link rel="icon" href="./favicon.ico" type="image/x-icon" /> -->
   </head>
-
+  
   <body>
-    <h1>Finance tracker</h1>
-    <h2>Limit: {{limit}}</h2>
-
-    <form action="{{ url_for('homepage.add_limit') }}" method="post">
-      <input type="number" name="limit" />
-      <button type="submit">Set limit</button>
-    </form>
-
-    <h2>Expenses:</h2>
-    <ul>
-      {% for expense in expenses %}
-      <li>
-        name: {{ expense["name"] }} expense: {{ expense["cost"] }} date: {{
-        expense["date"] }} category: {{ expense["category"] }}
-        <a href="{{url_for('homepage.delete', id = expense['id'])}}">Delete</a>
-      </li>
-      {% endfor %}
-    </ul>
-
-    <form action="{{ url_for('homepage.add') }}" method="post">
-      <input type="text" name="name" />
-      <input type="number" name="cost" />
-      <input type="date" name="date" />
-      <select name="category">
-        {% for category in categories %}
-        <option value="{{ category }}">{{ category }}</option>
-        {% endfor %}
-      </select>
-      <button type="submit">Add</button>
-    </form>
-
-    <h2>Sum of expenses: {{ all_costs["total"] }}</h2>
-    <ul>
-      {% for key in all_costs if not key == "total" %}
-      <li>{{ key }}: {{ all_costs[key] }}</li>
-      {% endfor %}
-    </ul>
-
-    <h2>Money left: {{ money_left(limit, all_costs["total"]) }}</h2>
-    <h2>Limit exceeded: {{ money_exceed(limit, all_costs["total"]) }}</h2>
+    ...
   </body>
 </html>
