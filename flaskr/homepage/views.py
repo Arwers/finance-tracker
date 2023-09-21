@@ -10,7 +10,7 @@ from .utils import *
 
 
 homepage = Blueprint(
-    "homepage", __name__, template_folder="templates", static_folder="static"
+    "homepage", __name__, template_folder="templates", static_folder="static", static_url_path="/flaskr/homepage"
 )
 
 categories = [
