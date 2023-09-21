@@ -1,41 +1,5 @@
 html {
     background: #451952;
     color: #ffffff;
-    font-family: "Lucida Console", monospace;
-}
-
-.side-nav {
-    width: 250px;
-    height: 100%;
-    background: #3f174b;
-    position: fixed; /*zapytać fudali */
-    top: 0;
-    left: 0;
-    padding: 25px;
-
-}
-
-.logo {
-    display: block;
-    margin: 10px 25px;
-    width: 50%;
-}
-
-.logo-img {
-    width: 200px;
-    height: 150px;
-}
-
-.nav-links {
-    list-style: none;
-    position: left;
-}
-
-.nav-links li {
-    padding: 10px 0;
-}
-
-.nav-links li a {
-    color: #ffffff;
-    text-decoration: none;
+    font-family: "Poppins", sans-serif;
 }
