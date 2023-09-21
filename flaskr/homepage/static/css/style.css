@@ -17,13 +17,25 @@ html {
 
 .logo {
     display: block;
-    margin-left: 25px;
-    margin-right: 25px;
-    margin-bottom: 130px;
+    margin: 10px 25px;
     width: 50%;
 }
 
-.logo-img{
+.logo-img {
     width: 200px;
     height: 150px;
+}
+
+.nav-links {
+    list-style: none;
+    position: left;
+}
+
+.nav-links li {
+    padding: 10px 0;
+}
+
+.nav-links li a {
+    color: #ffffff;
+    text-decoration: none;
 }
