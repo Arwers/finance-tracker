@@ -1,18 +1,19 @@
 html {
     background: #451952;
-    color: #ffffff;
     font-family: "Poppins", sans-serif;
+    color: #ffffff;
 }
 
 /* Header */
 /* Side navigation */
 .side-nav {
-    background: #662549;
-    width: 200px;
-    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
+    width: 200px;
+    height: 100%;
+    padding: 25px 25px;
+    background: #662549;
     padding: 25px 25px;
 }
 
@@ -26,12 +27,12 @@ html {
 }
 
 .nav-links a {
-    color: #ffffff;
-    text-decoration: none;
     display: flex;
+    border-radius: 20px;
     align-items: center;
     background: #AE445A;
-    border-radius: 20px;
+    text-decoration: none;
+    color: #ffffff;
  }
 
  .nav-links p {
@@ -40,8 +41,8 @@ html {
  
 
 .nav-links i {
-    font-size: 22px;
     padding: 0 20px 0 15px;
+    font-size: 22px;
 }
 
 /* Logo */
@@ -55,10 +56,14 @@ html {
     margin-left: 295px;
 }
 
+button {
+    cursor: pointer;
+}
+
 .right-item {
+    border-radius: 0 20px 20px 0;
     text-decoration: none;
     color: #ffffff;
-    border-radius: 0 20px 20px 0;
 }
 
 .left-item {
@@ -67,9 +72,9 @@ html {
 
 /* Basic statistics on the top */
 .total-money-related-stats {
+    padding: 20px 0;
     font-size: 30px;
     font-weight: bold;
-    padding: 20px 0;
 }
 
 .total-money-related-stats p {
@@ -77,17 +82,13 @@ html {
     margin: 5px 0;
 }
 
-button {
-    cursor:pointer;
-}
-
 /* Expenses table records */
 .main-table {
     width: 1175px;
     border-spacing: 5px;
-    background: #662549;
     border-radius: 20px;
     padding: 5px 15px 15px 15px;
+    background: #662549;
 }
 
 .main-table tr {
@@ -101,19 +102,19 @@ button {
 
 .main-table-record td {
     padding: 5px;
-    font-size: 22px;
     text-align: center;
+    font-size: 22px;
 }
 
 .main-new-row {
     display: block;
     width: 90%;
     margin: auto;
-    background: transparent;
     border:none;
-    color: #ffffff;
+    background: transparent;
     text-align: center;
     font-size: 22px;
+    color: #ffffff;
 }
 
 .delete-button a {
@@ -124,10 +125,10 @@ button {
 /* Expenses table new item */
 .add-new-item {
     width: 1000px;
-    background: #662549;
-    border-radius: 20px;
     margin-top: 15px;
+    border-radius: 20px;
     padding: 15px 0;
+    background: #662549;
 }
 
 /* Footer */
