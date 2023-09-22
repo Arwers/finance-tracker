@@ -31,7 +31,6 @@ html {
 
 .nav-links a {
     color: #ffffff;
-    text-align: left; 
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -50,5 +49,76 @@ html {
 }
 
 .main {
-    margin-left: 300px;
+    margin-left: 295px;
+}
+
+.total-money-related-stats {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 20px 0;
+}
+
+.total-money-related-stats p {
+    padding-left: 0;
+    margin: 5px 0;
+}
+
+.main-table {
+    width: 1175px;
+    border-spacing: 5px;
+    background: #662549;
+    border-radius: 20px;
+    padding: 5px 15px 15px 15px;
+}
+
+.main-table tr {
+    margin: auto;
+    font-size: 22px;
+}
+
+.main-table-record {
+    background: #AE445A;
+}
+
+.main-table-record td {
+    padding: 5px;
+    font-size: 22px;
+    text-align: center;
+}
+
+.main-new-row {
+    display: block;
+    width: 90%;
+    margin: auto;
+    background: transparent;
+    border:none;
+    color: #ffffff;
+    text-align: center;
+    font-size: 22px;
+}
+button {
+    cursor:pointer;
+}
+
+#delete-button a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.right-item {
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 0 20px 20px 0;
+}
+
+.left-item {
+    border-radius: 20px 0 0 20px;
+}
+
+.add-new-item {
+    width: 1000px;
+    background: #662549;
+    border-radius: 20px;
+    margin-top: 15px;
+    padding: 15px 0;
 }
