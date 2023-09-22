@@ -68,7 +68,7 @@ html {
     border-spacing: 5px;
     background: #662549;
     border-radius: 20px;
-    padding: 10px 15px 15px 15px;
+    padding: 5px 15px 15px 15px;
 }
 
 .main-table tr {
@@ -95,6 +95,9 @@ html {
     color: #ffffff;
     text-align: center;
     font-size: 22px;
+}
+button {
+    cursor:pointer;
 }
 
 #delete-button a {

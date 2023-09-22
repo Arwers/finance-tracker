@@ -27,6 +27,11 @@
               <i class="fa-solid fa-house"></i>
               <p>Home</p>
             </a>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-chart-line"></i>
+                <p>Insights</p>
+              </a>
           </li>
           <li>
             <a href="#">
@@ -95,7 +100,7 @@
           </td>
           <td id="delete-button" class="right-item">
             <a href="{{url_for('homepage.delete', id = expense['id'])}}">
-              Delete
+              <i class="fa-solid fa-trash"></i>
             </a>
           </td>
         </tr>
@@ -121,18 +126,20 @@
               </select>
             </td>
             <td class="right-item">
-              <button type="submit" class="main-new-row" > Add </button>
+              <button type="submit" class="main-new-row" > 
+                <i class="fa-solid fa-plus fa-lg"></i> 
+              </button>
             </td>
           </tr>
           </form>
       </table>
 
-      <h2>Sum of expenses: {{ all_costs["total"] }}</h2>
+      <!-- <h2>Sum of expenses: {{ all_costs["total"] }}</h2>
       <ul>
         {% for key in all_costs if not key == "total" %}
         <li>{{ key }}: {{ all_costs[key] }}</li>
         {% endfor %}
-      </ul>
+      </ul> -->
     </main>
 
     <footer id="footer">
