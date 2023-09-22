@@ -65,23 +65,32 @@ html {
 
 .main-table {
     width: 1000px;
+    border-spacing: 5px;
     background: #662549;
     border-radius: 20px;
-    padding: 20px;
+    padding: 10px 15px 15px 15px;
 }
 
-.main-table th {
+.main-table tr {
     margin: auto;
-    align-items: center;
+    font-size: 22px;
 }
 
 .main-table-record {
     background: #AE445A;
-
 }
 
 .main-table-record td {
-    border-radius: 5px;
     font-size: 22px;
-    margin: 20px;
+    text-align: center;
+}
+
+#delete-button {
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 0 20px 20px 0;
+}
+
+#name {
+    border-radius: 20px 0 0 20px;
 }

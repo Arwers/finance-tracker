@@ -85,7 +85,7 @@
             {{ expense["name"] }}
           </td>
           <td id="cost">
-            {{ expense["cost"] }}
+            {{ expense["cost"] }} $
           </td>
           <td id="category">
             {{ expense["category"] }}
@@ -93,8 +93,8 @@
           <td id="date">
             {{ expense["date"] }}
           </td>
-          <td>
-            <a href="{{url_for('homepage.delete', id = expense['id'])}}">
+          <td id="delete-button">
+            <a href="{{url_for('homepage.delete', id = expense['id'])}}" id="delete-button">
               Delete
             </a>
           </td>
