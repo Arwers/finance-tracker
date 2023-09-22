@@ -4,6 +4,8 @@ html {
     font-family: "Poppins", sans-serif;
 }
 
+/* Header */
+/* Side navigation */
 .side-nav {
     background: #662549;
     width: 200px;
@@ -12,12 +14,6 @@ html {
     top: 0;
     left: 0;
     padding: 25px 25px;
-}
-
-
-.logo img {
-    width: 200px;
-    height: 200px;
 }
 
 .nav-links {
@@ -48,10 +44,28 @@ html {
     padding: 0 20px 0 15px;
 }
 
+/* Logo */
+.logo img {
+    width: 200px;
+    height: 200px;
+}
+
+/* Main */
 .main {
     margin-left: 295px;
 }
 
+.right-item {
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 0 20px 20px 0;
+}
+
+.left-item {
+    border-radius: 20px 0 0 20px;
+}
+
+/* Basic statistics on the top */
 .total-money-related-stats {
     font-size: 30px;
     font-weight: bold;
@@ -63,6 +77,11 @@ html {
     margin: 5px 0;
 }
 
+button {
+    cursor:pointer;
+}
+
+/* Expenses table records */
 .main-table {
     width: 1175px;
     border-spacing: 5px;
@@ -96,25 +115,13 @@ html {
     text-align: center;
     font-size: 22px;
 }
-button {
-    cursor:pointer;
-}
 
-#delete-button a {
+.delete-button a {
     text-decoration: none;
     color: #ffffff;
 }
 
-.right-item {
-    text-decoration: none;
-    color: #ffffff;
-    border-radius: 0 20px 20px 0;
-}
-
-.left-item {
-    border-radius: 20px 0 0 20px;
-}
-
+/* Expenses table new item */
 .add-new-item {
     width: 1000px;
     background: #662549;
@@ -122,3 +129,5 @@ button {
     margin-top: 15px;
     padding: 15px 0;
 }
+
+/* Footer */
