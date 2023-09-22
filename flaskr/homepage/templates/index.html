@@ -57,12 +57,10 @@
     </header>
 
     <main class="main">
-
-      <h2>Limit: {{limit}}</h2>
-      <form action="{{ url_for('homepage.add_limit') }}" method="post">
-        <input type="number" name="limit" />
-        <button type="submit">Set limit</button>
-      </form>
+      <!-- total money related stats-->
+      <h2>Limit: {{limit}} $</h2>
+      <h2>Money left: {{ money_left(limit, all_costs["total"]) }} $</h2>
+      <h2>Limit exceeded: {{ money_exceed(limit, all_costs["total"]) }} $</h2>
 
         <h2>Expenses:</h2>
       <ul>
@@ -99,6 +97,10 @@
     </main>
 
     <footer id="footer">
+      <!-- <form action="{{ url_for('homepage.add_limit') }}" method="post">
+        <input type="number" name="limit" />
+        <button type="submit">Set limit</button>
+      </form> -->
     </footer>
   </body>
 </html>
