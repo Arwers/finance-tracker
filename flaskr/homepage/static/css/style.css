@@ -49,7 +49,7 @@ html {
 }
 
 .main {
-    margin-left: 300px;
+    margin-left: 295px;
 }
 
 .total-money-related-stats {
@@ -64,7 +64,7 @@ html {
 }
 
 .main-table {
-    width: 1000px;
+    width: 1175px;
     border-spacing: 5px;
     background: #662549;
     border-radius: 20px;
@@ -84,6 +84,22 @@ html {
     padding: 5px;
     font-size: 22px;
     text-align: center;
+}
+
+.main-new-row {
+    display: block;
+    width: 90%;
+    margin: auto;
+    background: transparent;
+    border:none;
+    color: #ffffff;
+    text-align: center;
+    font-size: 22px;
+}
+
+#delete-button a {
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .right-item {
