@@ -31,7 +31,6 @@ html {
 
 .nav-links a {
     color: #ffffff;
-    text-align: left; 
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -51,4 +50,38 @@ html {
 
 .main {
     margin-left: 300px;
+}
+
+.total-money-related-stats {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 20px 0;
+}
+
+.total-money-related-stats p {
+    padding-left: 0;
+    margin: 5px 0;
+}
+
+.main-table {
+    width: 1000px;
+    background: #662549;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.main-table th {
+    margin: auto;
+    align-items: center;
+}
+
+.main-table-record {
+    background: #AE445A;
+
+}
+
+.main-table-record td {
+    border-radius: 5px;
+    font-size: 22px;
+    margin: 20px;
 }
