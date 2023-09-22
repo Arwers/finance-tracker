@@ -114,15 +114,16 @@
         <form action="{{ url_for('homepage.add') }}" method="post" class="add-new-item">
           <tr class="main-table-record">
             <td class="left-item">
-              <input type="text" name="name" class="main-new-row" />
+              <input type="text" name="name" placeholder="name..." class="main-new-row" />
             </td>
 
             <td>
-              <input type="number" name="cost" class="main-new-row"/>
+              <input type="number" name="cost" placeholder="cost..." class="main-new-row"/>
             </td>
 
             <td>
-              <select name="category" class="main-new-row">
+              <select required name="category" class="main-new-row">
+                <option value="" selected disabled hidden>category...</option>
                 {% for category in categories %}
                   <option value="{{ category }}">{{ category }}</option>
                 {% endfor %}
@@ -130,7 +131,7 @@
             </td>
 
             <td>
-              <input type="date" name="date" class="main-new-row"/>
+              <input required type="date" name="date" class="main-new-row"/>
             </td>
 
             <td class="right-item">

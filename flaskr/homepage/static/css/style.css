@@ -131,4 +131,22 @@ button {
     background: #662549;
 }
 
+::placeholder {
+    color: #999999;
+}
+
+select,
+select option {
+  color: #000000;
+}
+
+select:invalid,
+select option[value=""] {
+  color: #999999;
+}
+
+[hidden] {
+    display: none;
+}
+
 /* Footer */
