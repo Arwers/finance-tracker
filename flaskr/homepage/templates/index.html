@@ -83,48 +83,56 @@
           <th>category</th>
           <th>date</th>
         </tr>
-        <!-- expenses from db -->
+
         {% for expense in expenses %}
-        <tr class="main-table-record">
-          <td id="name" class="left-item">
-            {{ expense["name"] }}
-          </td>
-          <td id="cost">
-            {{ expense["cost"] }} $
-          </td>
-          <td id="category">
-            {{ expense["category"] }}
-          </td>
-          <td id="date">
-            {{ expense["date"] }}
-          </td>
-          <td id="delete-button" class="right-item">
-            <a href="{{url_for('homepage.delete', id = expense['id'])}}">
-              <i class="fa-solid fa-trash"></i>
-            </a>
-          </td>
-        </tr>
+          <tr class="main-table-record">
+            <td id="name" class="left-item">
+              {{ expense["name"] }}
+            </td>
+
+            <td id="cost">
+              {{ expense["cost"] }} $
+            </td>
+
+            <td id="category">
+              {{ expense["category"] }}
+            </td>
+
+            <td id="date">
+              {{ expense["date"] }}
+            </td>
+
+            <td class="right-item delete-button">
+              <a href="{{url_for('homepage.delete', id = expense['id'])}}">
+                <i class="fa-solid fa-trash"></i>
+              </a>
+            </td>
+          </tr>
         {% endfor %}
         
-        <!-- row for adding new expense -->
+        <!-- new expense form -->
         <form action="{{ url_for('homepage.add') }}" method="post" class="add-new-item">
           <tr class="main-table-record">
             <td class="left-item">
               <input type="text" name="name" class="main-new-row" />
             </td>
+
             <td>
               <input type="number" name="cost" class="main-new-row"/>
             </td>
+
             <td>
               <select name="category" class="main-new-row">
                 {% for category in categories %}
-                <option value="{{ category }}">{{ category }}</option>
+                  <option value="{{ category }}">{{ category }}</option>
                 {% endfor %}
               </select>
             </td>
+
             <td>
               <input type="date" name="date" class="main-new-row"/>
             </td>
+
             <td class="right-item">
               <button type="submit" class="main-new-row" > 
                 <i class="fa-solid fa-plus fa-lg"></i> 
