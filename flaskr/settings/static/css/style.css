@@ -80,7 +80,9 @@ html {
     text-align: left;
 }
 
-.option-list-forms input {
+.option-list-forms 
+input,
+select {
     margin-left: 15px;
     font-size: 22px;
     height: 30px;
@@ -91,6 +93,16 @@ html {
     padding: 0 15px;
 }
 
+.option-list-forms-box {
+    margin-left: 15px;
+    font-size: 22px;
+    height: 30px;
+    border: 2px solid white;
+    border-radius: 20px;
+    background: transparent;
+    color: #ffffff; 
+    padding: 0 15px;
+}
 .option-list-forms button {
     font-size: 22px;
     border: none;
@@ -99,19 +111,24 @@ html {
 }
 
 ::placeholder {
-    color: #999999;
+    color: #ffffff;
 }
 
 select,
 select option {
-  color: #000000;
+    color: #000000;
 }
 
-select:invalid,
-select option[value=""] {
-  color: #999999;
+select:valid {
+    color: #ffffff;
 }
 
 [hidden] {
     display: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
