@@ -60,3 +60,10 @@
         </ul>
       </nav>
     </header>
+
+    <main class="main">
+        <form action="{{ url_for('settings.add_limit') }}" method="post">
+          <input type="number" name="limit" />
+          <button type="submit">Set limit</button>
+        </form>
+    </main>

@@ -18,3 +18,8 @@ def index():
         categories=current_app.categories,
     )
 
+@settings.route("/settings/add_limit", methods=["POST"])
+def add_limit():
+    current_app.limit = request.form["limit"]
+    
+    return redirect(url_for("settings.index"))

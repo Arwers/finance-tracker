@@ -50,3 +50,12 @@ html {
     width: 200px;
     height: 200px;
 }
+
+/* Main */
+.main {
+    margin-left: 295px;
+}
+
+button {
+    cursor: pointer;
+}
