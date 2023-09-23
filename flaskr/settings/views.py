@@ -16,10 +16,18 @@ def index():
         "settings.html",
         limit=current_app.limit,
         categories=current_app.categories,
+        currency=current_app.currency,
+        currencies=current_app.currencies,
     )
 
 @settings.route("/settings/add_limit", methods=["POST"])
 def add_limit():
     current_app.limit = request.form["limit"]
     
+    return redirect(url_for("settings.index"))
+
+@settings.route("/settings/add_currency", methods=["POST"])
+def add_currency():
+    current_app.currency = request.form["currency_option"]
+
     return redirect(url_for("settings.index"))
