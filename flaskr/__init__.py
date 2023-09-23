@@ -20,6 +20,31 @@ def create_app(config_filename="config.py"):
         "taxes",
         "other",
     ]
+    current_app.currencies = {
+    "PLN": "zł", # Polish złoty
+    "USD": "$",  # United States Dollar
+    "EUR": "€",  # Euro
+    "JPY": "¥",  # Japanese Yen
+    "GBP": "£",  # British Pound Sterling
+    "AUD": "A$",  # Australian Dollar
+    "CAD": "C$",  # Canadian Dollar
+    "CHF": "CHF",  # Swiss Franc
+    "CNY": "¥",  # Chinese Yuan
+    "SEK": "kr",  # Swedish Krona
+    "NZD": "NZ$",  # New Zealand Dollar
+    "MXN": "Mex$",  # Mexican Peso
+    "SGD": "S$",  # Singapore Dollar
+    "HKD": "HK$",  # Hong Kong Dollar
+    "NOK": "kr",  # Norwegian Krone
+    "KRW": "₩",  # South Korean Won
+    "TRY": "₺",  # Turkish Lira
+    "INR": "₹",  # Indian Rupee
+    "BRL": "R$",  # Brazilian Real
+    "ZAR": "R",  # South African Rand
+}
+    # current chosen currency
+    current_app.currency = "PLN" 
+
 
     # blueprints
     from .homepage.views import homepage

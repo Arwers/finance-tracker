@@ -65,6 +65,7 @@ html {
 }
 .options-list li {
     display: flex;
+    margin-bottom: 5px;
     border-radius: 20px;
     padding: 0 15px;
     align-items: center;
@@ -73,7 +74,15 @@ html {
 
 }
 
-.option-list-forms input {
+.options-list p {
+    display: inline-block;
+    width: 300px;
+    text-align: left;
+}
+
+.option-list-forms 
+input,
+select {
     margin-left: 15px;
     font-size: 22px;
     height: 30px;
@@ -84,9 +93,42 @@ html {
     padding: 0 15px;
 }
 
+.option-list-forms-box {
+    margin-left: 15px;
+    font-size: 22px;
+    height: 30px;
+    border: 2px solid white;
+    border-radius: 20px;
+    background: transparent;
+    color: #ffffff; 
+    padding: 0 15px;
+}
 .option-list-forms button {
     font-size: 22px;
     border: none;
     background: transparent;
     color: #ffffff; 
+}
+
+::placeholder {
+    color: #ffffff;
+}
+
+select,
+select option {
+    color: #000000;
+}
+
+select:valid {
+    color: #ffffff;
+}
+
+[hidden] {
+    display: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

@@ -25,6 +25,7 @@ def index():
         all_costs=all_costs,
         limit=current_app.limit,
         categories=current_app.categories,
+        currency_symbol=current_app.currencies[current_app.currency]
     )
 
 

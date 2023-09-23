@@ -74,5 +74,23 @@
             </button>
           </form>
         </li>
+
+        <li>
+          <p>
+            Change currency:
+          </p>
+          <form action="{{ url_for('settings.add_currency') }}" method="post" class="option-list-forms">
+            <select required name="currency_option">
+              <option value="{{ currency }}" selected>{{ currency }}</option>
+              {% for curr in currencies %}
+                <option value="{{ curr }}">{{ curr }}</option>
+              {% endfor %}
+            </select>
+
+            <button type="submit">
+              <i class="fa-solid fa-pen"></i>
+            </button>
+          </form>
+        </li>
       </ul>
     </main>
