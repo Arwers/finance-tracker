@@ -2,7 +2,7 @@
 from datetime import date
 
 # Third-party imports
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, request, redirect, url_for, current_app
 
 # Local file imports
 from ..models import db, Expenses, add_record, delete_record
@@ -12,20 +12,9 @@ from .utils import *
 homepage = Blueprint(
     "homepage", __name__, template_folder="templates", static_folder="static", static_url_path="/flaskr/homepage"
 )
-
-categories = [
-    "food",
-    "car",
-    "house",
-    "health",
-    "taxes",
-    "other",
-]
-
 temp_expenses = Expenses.query.all()
-all_costs = {key: 0 for key in ["total"] + categories}
+all_costs = {key: 0 for key in ["total"] + current_app.categories}
 all_costs = set_all_costs(all_costs, temp_expenses)
-limit = 2000
 
 
 @homepage.route("/")
@@ -34,8 +23,8 @@ def index():
         "index.html",
         expenses=Expenses.query.all(),
         all_costs=all_costs,
-        limit=limit,
-        categories=categories,
+        limit=current_app.limit,
+        categories=current_app.categories,
     )
 
 
