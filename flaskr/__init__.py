@@ -13,6 +13,8 @@ def create_app(config_filename="config.py"):
 
     # blueprints
     from .homepage.views import homepage
+    from .settings.views import settings
     app.register_blueprint(homepage)
+    app.register_blueprint(settings)
 
     return app
