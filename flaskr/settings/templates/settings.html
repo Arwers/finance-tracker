@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('.static', filename='css/style.css') }}" type="text/css">
+    <script src="https://kit.fontawesome.com/575dc4d1b1.js" crossorigin="anonymous"></script>
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge" /> -->
+    <title>Finance tracker</title>
+    <!-- <link rel="icon" href="./favicon.ico" type="image/x-icon" /> -->
+  </head>
+  
+  <body>
+    <header class="header">
+      <!-- Navigation bar on the left -->
+      <nav class="side-nav">
+        
+        <!-- Company logo -->
+        <a href="#" class="logo">
+          <img src="{{ url_for('.static', filename='img/logo.png') }}" class="logo-img">
+        </a>
+        
+        <!-- Options -->
+        <ul class="nav-links">
+          <li>
+            <a href="{{ url_for('homepage.index') }}">
+              <i class="fa-solid fa-house"></i>
+              <p>Home</p>
+            </a>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-chart-line"></i>
+                <p>Insights</p>
+              </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-right-to-bracket"></i>
+              <p>Log out</p>
+            </a>
+          </li>
+          <li>
+            <a href="{{ url_for('settings.index') }}">
+              <i class="fa-solid fa-gear"></i>
+              <p>Settings</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-film"></i>
+              <p>Tutorial</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-circle-info"></i>
+              <p>About</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>

@@ -12,7 +12,7 @@ settings = Blueprint(
 
 @settings.route("/settings")
 def index():
-        return render_template(
+    return render_template(
         "settings.html",
         limit=current_app.limit,
         categories=current_app.categories,
