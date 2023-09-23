@@ -81,7 +81,7 @@
           </p>
           <form action="{{ url_for('settings.add_currency') }}" method="post" class="option-list-forms">
             <select required name="currency_option">
-              <option value="{{ currency }}" selected disabled>{{ currency }}</option>
+              <option value="{{ currency }}" selected>{{ currency }}</option>
               {% for curr in currencies %}
                 <option value="{{ curr }}">{{ curr }}</option>
               {% endfor %}
