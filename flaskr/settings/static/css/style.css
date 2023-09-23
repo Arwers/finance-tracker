@@ -1,0 +1,92 @@
+html {
+    background: #451952;
+    font-family: "Poppins", sans-serif;
+    color: #ffffff;
+}
+
+/* Header */
+/* Side navigation */
+.side-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background: #662549;
+    padding: 25px 25px;
+}
+
+.nav-links {
+    padding: 0 25px;
+    list-style: none;
+}
+
+.nav-links li {
+    padding: 5px;
+}
+
+.nav-links a {
+    display: flex;
+    border-radius: 20px;
+    align-items: center;
+    background: #AE445A;
+    text-decoration: none;
+    color: #ffffff;
+ }
+
+ .nav-links p {
+    font-size: 20px;
+ }
+ 
+
+.nav-links i {
+    padding: 0 20px 0 15px;
+    font-size: 22px;
+}
+
+/* Logo */
+.logo img {
+    width: 200px;
+    height: 200px;
+}
+
+/* Main */
+.main {
+    width: 1140px;
+    margin-left: 295px;
+    border-radius: 20px;
+    padding: 15px;
+    background: #662549;
+}
+
+.options-list {
+    list-style: none;
+    padding: 0 20px;
+}
+.options-list li {
+    display: flex;
+    border-radius: 20px;
+    padding: 0 15px;
+    align-items: center;
+    background: #AE445A;
+    font-size: 22px;
+
+}
+
+.option-list-forms input {
+    margin-left: 15px;
+    font-size: 22px;
+    height: 30px;
+    border: 2px solid white;
+    border-radius: 20px;
+    background: transparent;
+    color: #ffffff; 
+    padding: 0 15px;
+}
+
+.option-list-forms button {
+    font-size: 22px;
+    border: none;
+    background: transparent;
+    color: #ffffff; 
+}
