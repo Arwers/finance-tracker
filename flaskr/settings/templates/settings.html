@@ -68,7 +68,7 @@
             Change limit:
           </p>
           <form action="{{ url_for('settings.add_limit') }}" method="post" class="option-list-forms">
-            <input type="number" name="limit"/>
+            <input type="number" placeholder="{{ limit }}" name="limit"/>
             <button type="submit">
               <i class="fa-solid fa-pen"></i>
             </button>
