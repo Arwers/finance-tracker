@@ -103,7 +103,7 @@
             </td>
 
             <td class="right-item delete-button">
-              <a href="{{url_for('homepage.delete', id = expense['id'])}}">
+              <a href="{{url_for('home.delete', id = expense['id'])}}">
                 <i class="fa-solid fa-trash"></i>
               </a>
             </td>
@@ -111,7 +111,7 @@
         {% endfor %}
         
         <!-- new expense form -->
-        <form action="{{ url_for('homepage.add') }}" method="post" class="add-new-item">
+        <form action="{{ url_for('home.add') }}" method="post" class="add-new-item">
           <tr class="main-table-record">
             <td class="left-item">
               <input type="text" name="name" placeholder="name..." class="main-new-row" />

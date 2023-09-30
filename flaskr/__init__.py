@@ -7,7 +7,9 @@ def create_app(config_filename="config.py"):
 
     # database
     from .models import db
-    db.init_app(app)
+    with app.app_context():
+        db.init_app(app)
+        db.create_all()
     app.app_context().push()
 
     # context variables
@@ -47,9 +49,9 @@ def create_app(config_filename="config.py"):
 
 
     # blueprints
-    from .homepage.views import homepage
+    from .home.views import home
     from .settings.views import settings
-    app.register_blueprint(homepage)
+    app.register_blueprint(home)
     app.register_blueprint(settings)
 
     return app
