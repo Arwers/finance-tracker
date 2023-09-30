@@ -17,4 +17,5 @@ def index():
         limit=current_app.limit,
         categories=current_app.categories,
         currency=current_app.currency,
+        total_costs=current_app.total_costs
     )
