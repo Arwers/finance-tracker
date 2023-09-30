@@ -1,7 +1,6 @@
-from flaskr.homepage.views import homepage
+from flaskr.home.views import home
 
-
-@homepage.context_processor
+@home.context_processor
 def utility_processor():
     def money_exceed(limit, total_cost):
         exceed = int(limit) - int(total_cost)

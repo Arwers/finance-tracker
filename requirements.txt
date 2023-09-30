@@ -1,3 +1,2 @@
-python==3.11.1
 flask==2.3.3
 flask_SQLAlchemy==3.1.1

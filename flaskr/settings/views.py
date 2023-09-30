@@ -7,13 +7,13 @@ from flask import Blueprint, render_template, request, redirect, url_for, curren
 
 
 settings = Blueprint(
-    "settings", __name__, template_folder="templates", static_folder="static", static_url_path="/flaskr/settings"
+    "settings", __name__, template_folder="templates", static_folder="static",
 )
 
 @settings.route("/settings")
 def index():
     return render_template(
-        "settings.html",
+        "settings/index.html",
         limit=current_app.limit,
         categories=current_app.categories,
         currency=current_app.currency,
