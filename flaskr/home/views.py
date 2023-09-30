@@ -10,7 +10,7 @@ from .utils import *
 
 
 home = Blueprint(
-    "home", __name__, template_folder="templates", static_folder="static", static_url_path="/flaskr/home"
+    "home", __name__, template_folder="templates", static_folder="static",
 )
 temp_expenses = Expenses.query.all()
 all_costs = {key: 0 for key in ["total"] + current_app.categories}
