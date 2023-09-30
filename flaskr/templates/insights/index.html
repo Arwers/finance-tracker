@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block stylesheet %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='insights/style.css') }}" type="text/css">
+{% endblock %}
+
+{% block title %}
+  Insights
+{% endblock %}
+
+{% block main %}
+  <h2>Sum of expenses: {{ total_costs["total"] }}</h2>
+  <ul>
+    {% for key in total_costs if not key == "total" %}
+    <li>{{ key }}: {{ total_costs[key] }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+
+{% block footer%}
+{% endblock %}
+
