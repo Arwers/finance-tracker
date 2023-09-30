@@ -51,7 +51,7 @@ html {
 }
 
 /* Main */
-.main {
+main {
     margin-left: 295px;
 }
 
@@ -59,24 +59,26 @@ button {
     cursor: pointer;
 }
 
-.right-item {
-    border-radius: 0 20px 20px 0;
-    text-decoration: none;
+
+::placeholder {
     color: #ffffff;
 }
 
-.left-item {
-    border-radius: 20px 0 0 20px;
+select,
+select option {
+  color: #000000;
 }
 
-/* Basic statistics on the top */
-.total-money-related-stats {
-    padding: 20px 0;
-    font-size: 30px;
-    font-weight: bold;
+select:valid {
+    color: #ffffff;
 }
 
-.total-money-related-stats p {
-    padding-left: 0;
-    margin: 5px 0;
+[hidden] {
+    display: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
