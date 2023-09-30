@@ -12,17 +12,15 @@ from .utils import *
 home = Blueprint(
     "home", __name__, template_folder="templates", static_folder="static",
 )
-temp_expenses = Expenses.query.all()
-all_costs = {key: 0 for key in ["total"] + current_app.categories}
-all_costs = set_all_costs(all_costs, temp_expenses)
 
+total_costs = set_all_costs(current_app.total_costs, Expenses.query.all())
 
 @home.route("/")
 def index():
     return render_template(
         "home/index.html",
         expenses=Expenses.query.all(),
-        all_costs=all_costs,
+        all_costs=total_costs,
         limit=current_app.limit,
         categories=current_app.categories,
         currency_symbol=current_app.currencies[current_app.currency]
@@ -42,8 +40,8 @@ def add():
     add_record(record)
 
     # update all_costs
-    all_costs["total"] += cost
-    all_costs[category] += cost
+    total_costs["total"] += cost
+    total_costs[category] += cost
 
     return redirect(url_for("home.index"))
 
@@ -53,8 +51,8 @@ def delete(id):
     record = db.get_or_404(Expenses, id)
 
     # update all_costs
-    all_costs["total"] -= record.cost
-    all_costs[record.category] -= record.cost
+    total_costs["total"] -= record.cost
+    total_costs[record.category] -= record.cost
 
     delete_record(record)
 
