@@ -1,97 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='settings/style.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}" type="text/css">
-    <script src="https://kit.fontawesome.com/575dc4d1b1.js" crossorigin="anonymous"></script>
-    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge" /> -->
-    <title>Finance tracker</title>
-    <!-- <link rel="icon" href="./favicon.ico" type="image/x-icon" /> -->
-  </head>
-  
-  <body>
-    <header class="header">
-      <!-- Navigation bar on the left -->
-      <nav class="side-nav">
-        
-        <!-- Company logo -->
-        <a href="#" class="logo">
-          <img src="{{ url_for('.static', filename='img/logo.png') }}" class="logo-img">
-        </a>
-        
-        <!-- Options -->
-        <ul class="nav-links">
-          <li>
-            <a href="{{ url_for('home.index') }}">
-              <i class="fa-solid fa-house"></i>
-              <p>Home</p>
-            </a>
-            <li>
-              <a href="#">
-                <i class="fa-solid fa-chart-line"></i>
-                <p>Insights</p>
-              </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa-solid fa-right-to-bracket"></i>
-              <p>Log out</p>
-            </a>
-          </li>
-          <li>
-            <a href="{{ url_for('settings.index') }}">
-              <i class="fa-solid fa-gear"></i>
-              <p>Settings</p>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa-solid fa-film"></i>
-              <p>Tutorial</p>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa-solid fa-circle-info"></i>
-              <p>About</p>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+{% extends 'layout.html' %}
 
-    <main class="main">
-      <ul class="options-list">
-        <li>
-          <p>
-            Change limit:
-          </p>
-          <form action="{{ url_for('settings.add_limit') }}" method="post" class="option-list-forms">
-            <input type="number" placeholder="{{ limit }}" name="limit"/>
-            <button type="submit">
-              <i class="fa-solid fa-pen"></i>
-            </button>
-          </form>
-        </li>
+{% block stylesheet %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='settings/style.css') }}" type="text/css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}" type="text/css">
+{% endblock %}
 
-        <li>
-          <p>
-            Change currency:
-          </p>
-          <form action="{{ url_for('settings.add_currency') }}" method="post" class="option-list-forms">
-            <select required name="currency_option">
-              <option value="{{ currency }}" selected>{{ currency }}</option>
-              {% for curr in currencies %}
-                <option value="{{ curr }}">{{ curr }}</option>
-              {% endfor %}
-            </select>
+{% block title %}
+  Settings
+{% endblock %}
 
-            <button type="submit">
-              <i class="fa-solid fa-pen"></i>
-            </button>
-          </form>
-        </li>
-      </ul>
-    </main>
+{% block main %}
+  <ul class="options-list">
+    <li>
+      <p>
+        Change limit:
+      </p>
+      <form action="{{ url_for('settings.add_limit') }}" method="post" class="option-list-forms">
+        <input type="number" placeholder="{{ limit }}" name="limit"/>
+        <button type="submit">
+          <i class="fa-solid fa-pen"></i>
+        </button>
+      </form>
+    </li>
+
+    <li>
+      <p>
+        Change currency:
+      </p>
+      <form action="{{ url_for('settings.add_currency') }}" method="post" class="option-list-forms">
+        <select required name="currency_option">
+          <option value="{{ currency }}" selected>{{ currency }}</option>
+          {% for curr in currencies %}
+            <option value="{{ curr }}">{{ curr }}</option>
+          {% endfor %}
+        </select>
+
+        <button type="submit">
+          <i class="fa-solid fa-pen"></i>
+        </button>
+      </form>
+    </li>
+  </ul>
+{% endblock %}
+
+{% block footer%}
+{% endblock %}
