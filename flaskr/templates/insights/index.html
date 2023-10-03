@@ -9,23 +9,27 @@
 {% endblock %}
 
 {% block main %}
-  <ul class="main-list">
-    <li>
-      <p>
-        Sum of expenses: {{ total_costs["total"] }}
-      </p>
-    </li>
-  </ul>
+  <section class="main-stats">
+    <ul class="main-list">
+      <li>
+        <p>
+          Sum of expenses: {{ total_costs["total"] }} {{currency_symbol}}
+        </p>
+      </li>
+    </ul>
+  </section>
 
-  <ul class="details-list">
+  <section class="detailed-stats">
+    <ul class="detail-list">
       {% for key in total_costs if not key == "total" %}
       <li>
         <p>
-          {{ key }}: {{ total_costs[key] }}
+          {{ key }}: {{ total_costs[key] }} {{ currency_symbol }}
         <p>
       </li>
       {% endfor %}
   </ul>
+  </section>
 {% endblock %}
 
 {% block footer%}
