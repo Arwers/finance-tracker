@@ -9,11 +9,22 @@
 {% endblock %}
 
 {% block main %}
-  <h2>Sum of expenses: {{ total_costs["total"] }}</h2>
-  <ul>
-    {% for key in total_costs if not key == "total" %}
-    <li>{{ key }}: {{ total_costs[key] }}</li>
-    {% endfor %}
+  <ul class="main-list">
+    <li>
+      <p>
+        Sum of expenses: {{ total_costs["total"] }}
+      </p>
+    </li>
+  </ul>
+
+  <ul class="details-list">
+      {% for key in total_costs if not key == "total" %}
+      <li>
+        <p>
+          {{ key }}: {{ total_costs[key] }}
+        <p>
+      </li>
+      {% endfor %}
   </ul>
 {% endblock %}
 
