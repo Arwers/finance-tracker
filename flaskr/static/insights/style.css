@@ -1,0 +1,35 @@
+
+.main-stats {
+    padding: 20px 0px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.detailed-stats {
+    width: 1140px;
+    border-radius: 20px;
+    padding: 15px;
+    background: #662549;
+}
+
+.detail-list {
+    list-style: none;
+    padding: 0 20px;
+}
+
+.detail-list li {
+    display: flex;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    padding: 0 15px;
+    align-items: center;
+    background: #AE445A;
+    font-size: 22px;
+
+}
+
+.detail-list p {
+    display: inline-block;
+    width: 300px;
+    text-align: left;
+}

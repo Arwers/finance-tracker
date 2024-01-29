@@ -46,12 +46,14 @@ def create_app(config_filename="config.py"):
 }
     # current chosen currency
     current_app.currency = "PLN" 
-
-
+    current_app.total_costs = {key: 0 for key in ["total"] + current_app.categories}
+    
     # blueprints
     from .home.views import home
     from .settings.views import settings
+    from .insights.views import insights
     app.register_blueprint(home)
     app.register_blueprint(settings)
+    app.register_blueprint(insights)
 
     return app

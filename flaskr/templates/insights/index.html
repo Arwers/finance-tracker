@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block stylesheet %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='insights/style.css') }}" type="text/css">
+{% endblock %}
+
+{% block title %}
+  Insights
+{% endblock %}
+
+{% block main %}
+  <section class="main-stats">
+    <p>
+      Sum of expenses: {{ total_costs["total"] }} {{currency_symbol}}
+    </p>
+  </section>
+
+  <section class="detailed-stats">
+    <ul class="detail-list">
+      {% for key in total_costs if not key == "total" %}
+      <li>
+        <p>
+          {{ key }}: {{ total_costs[key] }} {{ currency_symbol }}
+        <p>
+      </li>
+      {% endfor %}
+  </ul>
+  </section>
+{% endblock %}
+
+{% block footer%}
+{% endblock %}
+
