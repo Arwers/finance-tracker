@@ -1,5 +1,6 @@
 from flaskr.home.views import home
 
+
 @home.context_processor
 def utility_processor():
     def money_exceed(limit, total_cost):

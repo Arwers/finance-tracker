@@ -10,10 +10,14 @@ from .utils import *
 
 
 home = Blueprint(
-    "home", __name__, template_folder="templates", static_folder="static",
+    "home",
+    __name__,
+    template_folder="templates",
+    static_folder="static",
 )
 
 total_costs = set_all_costs(current_app.total_costs, Expenses.query.all())
+
 
 @home.route("/")
 def index():
@@ -23,7 +27,7 @@ def index():
         all_costs=total_costs,
         limit=current_app.limit,
         categories=current_app.categories,
-        currency_symbol=current_app.currencies[current_app.currency]
+        currency_symbol=current_app.currencies[current_app.currency],
     )
 
 
