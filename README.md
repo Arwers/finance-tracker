@@ -35,9 +35,9 @@ $ python run.py
 ```
 
 ## Features
-#### Implemented:
+### Implemented:
 
-# 0.1.0-alpha
+##### 0.1.0-alpha
 * Set up limit for your spendings
 * Add expenses to the list
 * Remove expenses to the list
@@ -46,14 +46,14 @@ $ python run.py
 * Show how much money is left
 * Show how much limit was exceed
 
-# 0.2.0-alpha
+##### 0.2.0-alpha
 * Add side-bar menu
 * Add database to store expenses
 * Add tests for pages
 * Add settings page
 * Add insights page
 
-#### To do:
+### To do:
 * Add signup and login
 * Add charts for data
 * Add about page
