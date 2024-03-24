@@ -18,7 +18,6 @@ insights = Blueprint(
 def index():
     return render_template(
         "insights/index.html",
-        limit=current_app.limit,
         categories=current_app.categories,
         currency_symbol=current_app.currencies[current_app.currency],
         total_costs=current_app.total_costs,
