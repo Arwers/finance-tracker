@@ -7,8 +7,12 @@ from flask import Blueprint, render_template, request, redirect, url_for, curren
 
 
 settings = Blueprint(
-    "settings", __name__, template_folder="templates", static_folder="static",
+    "settings",
+    __name__,
+    template_folder="templates",
+    static_folder="static",
 )
+
 
 @settings.route("/settings")
 def index():
@@ -20,11 +24,13 @@ def index():
         currencies=current_app.currencies,
     )
 
+
 @settings.route("/settings/add_limit", methods=["POST"])
 def add_limit():
     current_app.limit = request.form["limit"]
-    
+
     return redirect(url_for("settings.index"))
+
 
 @settings.route("/settings/add_currency", methods=["POST"])
 def add_currency():
