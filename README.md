@@ -36,6 +36,8 @@ $ python run.py
 
 ## Features
 #### Implemented:
+
+# 0.1.0-alpha
 * Set up limit for your spendings
 * Add expenses to the list
 * Remove expenses to the list
@@ -43,11 +45,19 @@ $ python run.py
 * Show spendings by category
 * Show how much money is left
 * Show how much limit was exceed
-#### To do:
+
+# 0.2.0-alpha
+* Add side-bar menu
 * Add database to store expenses
+* Add tests for pages
+* Add settings page
+* Add insights page
+
+#### To do:
 * Add signup and login
 * Add charts for data
-* Add drop-down menu
+* Add about page
+* Add tutorial page
 
 ## Status
 #### 🟢 Active
@@ -58,4 +68,4 @@ Project is in active development
 * [Todo list app in Flask by NeuralNine](https://youtu.be/W1r8fVLS-gI?si=d8nDC48YtF9NHP9F)
 * [Explore Flask](https://exploreflask.com/en/latest/index.html)
 * [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
-* And of course [stackoverflow](https://stackoverflow.com/) :)
+* And of course [stackoverflow](https://stackoverflow.com/)
