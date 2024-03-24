@@ -16,8 +16,11 @@ and also to extend knowledge about Flask and data analysis using python.
 ## Technologies
 Project is created with:
 * __Python__ version: 3.11.1
+* __Pytest__ version: 8.0.0
+* __SQLAlchemy__ version: 3.1.1
 * __Flask__ version: 2.3.3
 * __HTML__
+* __CSS__
 
 ## Setup
 Instalation with pip:
